@@ -17,7 +17,7 @@ const ImageView = () => {
           </tr>
           <tr>
             <td rowSpan={2} colSpan={1} className="spacer">
-                    <h1>Zacini</h1>
+                    <h1>Začini</h1>
                     <p>Zanimljivo je na koji nacin su zacini uticali na tokove civilizacije.
                         Koriceni su u narodonoj medicini, ishrani, proizvodnji parfema...
                         Danas su u upotrebi mnogobrojni zacini, a samo neki od njih su:
@@ -37,7 +37,7 @@ const ImageView = () => {
                     </ul>
                     <p>Prvi zacini kojima se trgovala su <b><i>biber</i></b> i <b><i>cimet</i></b>, a 
                     vreme za koje se podatak vezuje je cak 2000 godina pre nove ere.</p>
-                    <pre className="link"><a href='www.wikipedia.com'>skok na tabelu sa podacima o proizvodnji</a></pre>
+                    <pre className="link"><a href='https://sh.wikipedia.org/wiki/Za%C4%8Din#Začini_i_njihova_upotreba' target='_blank'>skok na tabelu sa podacima o proizvodnji</a></pre>
             </td>
             <td rowSpan={2} colSpan={1} style={{width:'50px'}}></td>
             <td colSpan={2} rowSpan={1} className="image-section">
@@ -47,7 +47,7 @@ const ImageView = () => {
             <tr>
             <td colSpan={2} rowSpan={1} className="content-section">
                 <p>Proizvodnja zacina po zemljama <sup>*</sup></p>
-                <table border={"1px soild black"}  className='innerTable'>
+                <table className='innerTable'>
                     <tbody>
                         <tr>
                             <td>Indija</td>

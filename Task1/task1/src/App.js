@@ -30,12 +30,12 @@ function validatePassword(password) {
     return "missing number";
   }
 
-  if (!/[!@#$%&'()*+=?{}[\]:;]/.test(password)) {
+  if (!/.*[!@#$%&'()*+=?{}[\]:;].*[!@#$%&'()*+=?{}[\]:;].*/.test(password)) {
     console.log("missing special characters");
     return "missing special characters";
   }
 
-  const repeatedCharsRegex = /(.)\1{1,}/g;
+  const repeatedCharsRegex = /(.)\1{2,}/g;
   const repeatedChars = password.match(repeatedCharsRegex);
 
   if (repeatedChars && repeatedChars.some((chars) => chars.length > maxRepeatedChars)) {
