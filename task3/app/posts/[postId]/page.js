@@ -42,7 +42,7 @@ const BlogPostPage = ({ params }) => {
     }
   }, [params.postId]);
   
-
+  console.log(triler)
   const handleAddComment = async (commentText) => {
     try {
       const newComment = {
@@ -70,6 +70,13 @@ const BlogPostPage = ({ params }) => {
       console.error('Error:', error);
     }
   };
+
+  function formatDate(date) {
+    if (!date) return '';
+
+    const dateObj = new Date(date);
+    return `${dateObj.getDate()}.${dateObj.getMonth()}.${dateObj.getFullYear()}.`
+  }
   
 
   if (!post) {
@@ -84,7 +91,7 @@ const BlogPostPage = ({ params }) => {
                 <div className="flex flex-col items-center justify-center">
                   <img className="mx-auto" src={post.imageUrl} alt="naslovna fotografija" height="200px" />
                     <h5 style={{ color: "red", paddingTop: 20 }} className="text-center text-2xl">{post.name}</h5>
-                    {triler && <button className=""><Link style={{color:"#EEE8AA"}} href={triler.link} target='_blank'> Watch the triler</Link></button>} 
+                    {triler && <button className="text-xl"><Link style={{color:"rgb(var(--foreground-rgb))", fontWeight: 'bold'}} href={triler.link ?? ''} target='_blank'>🎥 Warch the trailer</Link></button>} 
                     <p className="text-justify" style={{ maxWidth: '80ch' }}>
                       {post.description}
                     </p>
@@ -94,7 +101,9 @@ const BlogPostPage = ({ params }) => {
       <h2 className='text-center text-2xl'>Comments:</h2>
       <ul>
         {comments.map(comment => (
-         <div key={comment.id} className='text-center comment' >{comment.comment}</div>
+         <div key={comment.id} className='text-center comment' data-username={comment.username ?? 'User'} data-created-at={formatDate(comment.createdAt)} >
+            {comment.comment}
+          </div>
         ))}
       </ul>
       <div style={{ display: 'flex', justifyContent: 'center' }}>
@@ -109,8 +118,8 @@ const BlogPostPage = ({ params }) => {
   >
     <h2>Add Comment</h2>
     <div className='comment-add'>
-      <input type="text" name="text" required />
-      <a href="#" type="submit">Submit</a>
+      <input className='input' type="text" name="text" required />
+      <input className='button--submit' type="submit" value='Submit'/>
     </div>
 
   </form>

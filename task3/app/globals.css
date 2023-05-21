@@ -25,6 +25,7 @@ body {
     )
     rgb(var(--background-start-rgb));
     scroll-behavior: smooth;
+    min-height: 100vh;
 }
 ul {
   width: 80%;
@@ -51,32 +52,70 @@ li:hover{
 }
 
 .comment {
-  background-color: white;
-  color: black;
+  background-color: rgba(216, 145, 14, 0.679);
+  position: relative;
+  color: rgb(var(--foreground-rgb));
   max-width: 600px;
   padding: 20px;
-  margin: 20px auto;
+  margin: 60px auto;
+  border-radius: 12px;
+  border-bottom-left-radius: 0;
   box-shadow: 0 10px 20px rgb(var(--foreground-rgb), 0.3), 0 6px 6px rgb(var(--foreground-rgb), 0.3);
 }
 
+@media (prefers-color-scheme: dark) {
+  .comment {
+    box-shadow: unset;
+  }
+}
+
+.comment::before {
+  content: attr(data-username);
+  position: absolute;
+  left: 10px;
+  top: -25px;
+}
+
+.comment::after {
+  content: attr(data-created-at);
+  position: absolute;
+  right: 10px;
+  bottom: -25px;
+  font-size: 0.8rem;
+}
+
 .comment-add {
-  background-color: white;
-  color: black;
-  display: flex;
-  align-items: stretch;
-  max-width: 600px;
-  padding: 20px;
-  border-radius: 12px;
-  gap: 12px;
-  border: 3px solid black;;
+  margin-bottom: 100px;
 }
 
-.comment-add input {
+.comment-add .input {
+  min-height: 50px;
+  max-width: 450px;
+  padding: 0 1rem;
+  color: rgb(var(--foreground-rgb));
+  font-size: 15px;
+  border: 1px solid red;
+  border-radius: 6px 0 0 6px;
   background-color: transparent;
-  outline: none;
-  flex: 1;
 }
-
-.comment-add a {
-  /* background-color: lightgray; */
+ 
+.comment-add .button--submit {
+  min-height: 50px;
+  padding: .5em 1em;
+  border: none;
+  border-radius: 0 6px 6px 0;
+  background-color: red;
+  color: #fff;
+  font-size: 15px;
+  cursor: pointer;
+  transition: background-color .3s ease-in-out;
+}
+ 
+.comment-add .button--submit:hover {
+  background-color: orange;
+}
+ 
+.comment-add .input:focus, .input:focus-visible {
+  border-color: #3898EC;
+  outline: none;
 }
