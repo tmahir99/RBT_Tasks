@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+    scroll-behavior: smooth;
+}
+ul {
+  width: 80%;
+  margin: auto;
+  flex-wrap: wrap;
+}
+li {
+  flex: 1;
+  text-align: center;
+  padding: 10px 12px;
+}
+li:hover{
+  background-color: rgb(102, 102, 102);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.selected {
+  border-bottom: 3px solid red;
+  border-bottom-left-radius: 6px;
+  border-bottom-right-radius: 6px;
+  color: red;
+}
+
+.comment {
+  background-color: white;
+  color: black;
+  max-width: 600px;
+  padding: 20px;
+  margin: 20px auto;
+  box-shadow: 0 10px 20px rgb(var(--foreground-rgb), 0.3), 0 6px 6px rgb(var(--foreground-rgb), 0.3);
+}
+
+.comment-add {
+  background-color: white;
+  color: black;
+  display: flex;
+  align-items: stretch;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 12px;
+  gap: 12px;
+  border: 3px solid black;;
+}
+
+.comment-add input {
+  background-color: transparent;
+  outline: none;
+  flex: 1;
+}
+
+.comment-add a {
+  /* background-color: lightgray; */
+}

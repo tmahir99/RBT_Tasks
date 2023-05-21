@@ -1,0 +1,96 @@
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+    height: 600px;
+  }
+  
+  .header {
+    background-image: url('../images/spices.png');
+    height: 170px;
+  }
+  
+  .left-section {
+    height: 30px;
+  }
+  .spacer h1 {
+    color: #fff;
+    text-align: center;
+  }
+
+  .spacer p{
+    text-align: justify;
+    margin: 3%
+  }
+  
+  .mainlist{
+    list-style-type:square;
+    font-weight: bold;
+}
+
+.spacer pre a, .link{
+    color: white;
+    text-align: center;
+    padding-bottom: 3%;
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+}
+
+  .spacer {
+    font-family: 'Times New Roman', Times, serif;
+    font-size: 14px;
+    width: 50px;
+    background-color: #cdad00;
+    width: 300px;
+    height: 400px;
+
+  }
+  
+  .right-section {
+    width: 550px;
+  }
+  
+  .image-section {
+    text-align: right;
+    vertical-align: bottom;
+    width: 550px;
+    height: 200px;
+  }
+
+  .innerTable{
+    margin: 0 auto;
+  }
+  
+  .content-section {
+    background-color: #8B7500;
+    text-align: center;
+    padding: 0;
+    width: 550px;
+    font-size: 16px;
+
+  }
+  
+  .scroll-link {
+    overflow-y: scroll;
+    height: 100%;
+  }
+  
+  h2 {
+    font-family: 'Times New Roman', serif;
+    font-size: 16px;
+  }
+  
+  .wikipedia-link {
+    color: #cdad00;
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+  }
+  
+  .wikipedia-link:visited {
+    color: #8b7500;
+  }
+  
+  .wikipedia-link:hover {
+    color: #000000;
+  }
+  
