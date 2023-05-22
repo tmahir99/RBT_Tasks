@@ -52,7 +52,7 @@ li:hover{
   color: red;
 }
 
-.comment {
+/* .comment {
   background-color: rgba(175, 175, 175, 0.679);
   position: relative;
   color: rgb(var(--foreground-rgb));
@@ -62,7 +62,9 @@ li:hover{
   border-radius: 12px;
   border-bottom-left-radius: 0;
   box-shadow: 0 10px 20px rgb(var(--foreground-rgb), 0.3), 0 6px 6px rgb(var(--foreground-rgb), 0.3);
-}
+} */
+
+
 
 @media (prefers-color-scheme: dark) {
   .comment {
@@ -70,20 +72,60 @@ li:hover{
   }
 }
 
-.comment::before {
+/* .comment::before {
   content: attr(data-username);
   position: absolute;
   left: 10px;
   top: -25px;
 }
-
+*/
 .comment::after {
   content: attr(data-created-at);
   position: absolute;
   right: 10px;
-  bottom: -25px;
+  bottom: 0;
   font-size: 0.8rem;
+} 
+
+.comments-container {
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin: 40px 20% 0 20%;
+  /* background-color: #464646; */
+
 }
+pre{
+  display: inline;
+  font-size: 0.6rem;
+}
+div pre{
+  align-items: right;
+  text-align: right;
+}
+.comment {
+  position: relative;
+  margin-bottom: 1rem;
+  padding: 0.3rem;
+  background-color: #c3c2c2;
+  border: 1px solid #c3c2c2;
+  border-radius: 20px;
+  color: black;
+}
+
+.comment[data-username]::before {
+  content: attr(data-username);
+  font-weight: bold;
+  margin-right: 0.5rem;
+}
+
+.comment[data-created-at]::after {
+  content: attr(data-created-at);
+  font-size: 0.8rem;
+  color: #888;
+  text-align: right;
+}
+
 
 .comment-add {
   margin-bottom: 100px;

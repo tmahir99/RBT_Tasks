@@ -90,14 +90,14 @@ const HomePage = () => {
     <div>
       
       <h1 className="text-center text-2xl" style={{padding :"20px 0 50px 0 "}}>Categories</h1>
-<ul className="text-base flex justify-center" style={{ gap: "1rem", borderBottom:"2px solid red"}}>
-  <li className={"inline " + (selected === 'all' ? 'selected' : '')}  onClick={() => filterCategories('all')}>All</li>
-  {categories.map(category => (
-    <li className={"inline " + (category.id === selected ? 'selected' : '')} key={category.id} onClick={() => filterCategories(category.id)}>
-      {category.name}
-    </li>
-  ))}
-</ul>
+      <ul className="text-base flex justify-center" style={{ gap: "1rem", borderBottom:"2px solid red"}}>
+        <li className={"inline " + (selected === 'all' ? 'selected' : '')}  onClick={() => filterCategories('all')}>All</li>
+        {categories.map(category => (
+          <li className={"inline " + (category.id === selected ? 'selected' : '')} key={category.id} onClick={() => filterCategories(category.id)}>
+            {category.name}
+          </li>
+        ))}
+      </ul>
 
 
 

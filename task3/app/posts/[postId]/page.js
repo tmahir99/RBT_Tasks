@@ -105,14 +105,22 @@ const BlogPostPage = ({ params }) => {
       </div>
 
 
-      <h2 className='text-center text-2xl'>Comments:</h2>
-      <ul>
-        {comments.map(comment => (
-         <div key={comment.id} className='text-left comment' data-username={comment.username ?? 'User'} data-created-at={formatDate(comment.createdAt)} >
-            {comment.comment}
-          </div>
-        ))}
-      </ul>
+      <div className="comments-container">
+        <h2 className="text-center text-2xl">Comments:</h2>
+        <ul>
+          {comments.map((comment) => (
+            <div
+              key={comment.id}
+              className="comment"
+              data-username={comment.username + ':' ?? 'User: '}
+              data-created-at={formatDate(comment.createdAt)}
+            >
+              {comment.comment ?? 'I like it'} 
+            </div>
+          ))}
+        </ul>
+      </div>
+
       <div style={{ display: 'flex', justifyContent: 'center' }}>
   <form
     onSubmit={e => {
