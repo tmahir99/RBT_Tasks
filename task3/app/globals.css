@@ -53,7 +53,7 @@ li:hover{
 }
 
 .comment {
-  background-color: rgba(216, 145, 14, 0.679);
+  background-color: rgba(175, 175, 175, 0.679);
   position: relative;
   color: rgb(var(--foreground-rgb));
   max-width: 600px;

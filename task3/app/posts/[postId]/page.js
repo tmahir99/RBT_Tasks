@@ -108,7 +108,7 @@ const BlogPostPage = ({ params }) => {
       <h2 className='text-center text-2xl'>Comments:</h2>
       <ul>
         {comments.map(comment => (
-         <div key={comment.id} className='text-center comment' data-username={comment.username ?? 'User'} data-created-at={formatDate(comment.createdAt)} >
+         <div key={comment.id} className='text-left comment' data-username={comment.username ?? 'User'} data-created-at={formatDate(comment.createdAt)} >
             {comment.comment}
           </div>
         ))}
