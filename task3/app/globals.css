@@ -36,6 +36,7 @@ li {
   flex: 1;
   text-align: center;
   padding: 10px 12px;
+  margin-bottom: 20px;
 }
 li:hover{
   background-color: rgb(102, 102, 102);
@@ -118,4 +119,31 @@ li:hover{
 .comment-add .input:focus, .input:focus-visible {
   border-color: #3898EC;
   outline: none;
+}
+.pagination button{
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  border: 1px solid red;
+  border-radius: 6px;
+  width: 2rem;
+  margin: 1rem;
+}
+.pagination button:hover{
+  background-color: rgb(102, 102, 102);
+  color: white;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.pagination button:disabled{
+  background-color: rgb(var(--foreground-rgb));
+  color: rgb(var(--background-end-rgb));
+}
+.pagination{
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  
 }

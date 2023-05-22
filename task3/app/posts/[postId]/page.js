@@ -87,16 +87,23 @@ const BlogPostPage = ({ params }) => {
 
   return (
     <div>
-              <div key={post.id} className="flex flex-col items-center justify-center" style={{ minHeight: '500px' }}>
-                <div className="flex flex-col items-center justify-center">
-                  <img className="mx-auto" src={post.imageUrl} alt="naslovna fotografija" height="200px" />
-                    <h5 style={{ color: "red", paddingTop: 20 }} className="text-center text-2xl">{post.name}</h5>
-                    {triler && <button className="text-xl"><Link style={{color:"rgb(var(--foreground-rgb))", fontWeight: 'bold'}} href={triler.link ?? ''} target='_blank'>🎥 Warch the trailer</Link></button>} 
-                    <p className="text-justify" style={{ maxWidth: '80ch' }}>
-                      {post.description}
-                    </p>
-                </div>
-              </div>
+      <div key={post.id} className="flex flex-col items-center justify-center" style={{ minHeight: '500px' }}>
+        <div className="flex flex-col items-center justify-center" style={{borderBottom:"solid red 2px"}}>
+          <h1 style={{ color: "red", paddingTop: 20, paddingBottom:"3rem", paddingTop:"5rem" }} className="text-center text-3xl">{post.name}</h1>
+          <div className="flex justify-between">
+            <div className="flex-1" style={{paddingBottom:"5rem"}}>
+              <img style={{borderRadius:"6px"}} className="mx-auto" src={post.imageUrl} alt="naslovna fotografija" height="300px" />
+            </div>
+            <div className="flex-1 ml-4" style={{justifyContent:'center', verticalAlign:'center', height:"100%"}}>
+              <p className="text-justify" style={{ maxWidth: '80ch', paddingBottom:"5rem"}}>
+                {post.description}
+              </p>
+              {triler && <button className="text-xl"><Link style={{ color: "rgb(var(--foreground-rgb))", fontWeight: 'bold', paddingTop:"5rem", bottom:'0' }} href={triler.link ?? ''} target='_blank'>🎥 Watch the trailer</Link></button>}
+            </div>
+          </div>
+        </div>
+      </div>
+
 
       <h2 className='text-center text-2xl'>Comments:</h2>
       <ul>

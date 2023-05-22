@@ -14,11 +14,44 @@ const fetchBlogPosts = async () => {
   return data;
 };
 
+
+const Pagination = ({curentPage, totalPages, onPageChange}) =>{
+  const pageNumbers = Array.from(Array(totalPages).keys());
+
+  return (
+    <div className="pagination">
+      {
+        pageNumbers.map((pageNumber) => (
+          <button key={pageNumber} onClick={() => onPageChange(pageNumber + 1)}
+          disabled={curentPage == pageNumber + 1} style={{marginBottom:"100px"}}>
+            {pageNumber + 1}
+          </button>
+        ))
+      }
+    </div>
+  )
+}
+
 const HomePage = () => {
   const [categories, setCategories] = useState([]);
   const [blogPosts, setBlogPosts] = useState([]);
   const [filteredPosts, setFilteredPosts] = useState([]);
   const [selected, setSelected] = useState('all')
+  const [currentPage,setCurrentPage] = useState(1);
+
+  const moviesPerPage = 8;
+
+  const indexOfLast = currentPage * moviesPerPage;
+
+  const indexOfFirst = indexOfLast - moviesPerPage;
+
+  const currentmovies = filteredPosts.slice(indexOfFirst, indexOfLast); 
+
+  const totalPages = Math.ceil(filteredPosts.length / moviesPerPage);
+
+  const onPageChange = (pageNumber) => {
+    setCurrentPage(pageNumber);
+  }
 
   useEffect(() => {
     fetchCategories().then(data => setCategories(data));
@@ -56,8 +89,8 @@ const HomePage = () => {
   return (
     <div>
       
-      <h1 className="text-center text-xl" style={{marginTop:"20px"}}>Categories</h1>
-<ul className="text-base flex justify-center" style={{ gap: "1rem" }}>
+      <h1 className="text-center text-2xl" style={{padding :"20px 0 50px 0 "}}>Categories</h1>
+<ul className="text-base flex justify-center" style={{ gap: "1rem", borderBottom:"2px solid red"}}>
   <li className={"inline " + (selected === 'all' ? 'selected' : '')}  onClick={() => filterCategories('all')}>All</li>
   {categories.map(category => (
     <li className={"inline " + (category.id === selected ? 'selected' : '')} key={category.id} onClick={() => filterCategories(category.id)}>
@@ -69,7 +102,7 @@ const HomePage = () => {
 
 
       <div className="flex justify-center flex-wrap" style={{ gap: 80 }}>
-        {filteredPosts.map(post => (
+        {currentmovies.map(post => (
           <div key={post.id} className="flex flex-row items-center justify-center max-w-1/4" style={{ minHeight: '500px', gap: '80px', paddingTop:"40px" }}>
             <div className="flex flex-col items-center justify-center gap-10 wrap">
               <img className="mx-auto" src={post.imageUrl} style={{borderRadius:"10px"}} alt="naslovna fotografija" height="200px" />
@@ -88,6 +121,7 @@ const HomePage = () => {
           </div>
         ))}
       </div>
+      <Pagination className="" curentPage={currentPage} totalPages={totalPages} onPageChange={onPageChange}/>
     </div>
   );
 };

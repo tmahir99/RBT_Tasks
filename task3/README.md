@@ -1,4 +1,19 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Movie App
+
+This is a movie app built with React, Next.js, Tailwind CSS, and CSS. The app allows users to browse and filter movies by categories, view movie details, watch trailers, and leave comments.
+
+## Features
+
+- Filter movies by categories
+- Pagination: 8 movies per page
+- Movie Details page with image, title, description, and trailer link
+- Watch the trailer on IMDb
+- Comments section with commenter name, comment text, and timestamp
+- Comment submission form
+- Adaptive design with support for light and dark mode
+- Responsive layout for all devices
+
 
 ## Getting Started
 
